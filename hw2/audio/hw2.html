@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>audio_player</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+  <div class="audio-player">
+    <div id="play-btn"></div>
+    <div class="audio-wrapper" id="player-container" href="javascript:;">
+      <audio id="player" ontimeupdate="initProgressBar()">
+        <source src="Oslo.mp3" type="audio/mp3">
+                <source src="https://dl-web.dropbox.com/get/Oslo.mp3?_subject_uid=199049471&w=AABuDNt9BDJnaZOelVFws9FXTufkXCvAPS5SYpy_gRZ2GQ&duc_id=dropbox_duc_id" type="audio/mp3">
+      </audio>
+    </div>
+    <div class="player-controls scrubber">
+      <p>Oslo <small>by</small> Holy Esque</p>
+      <span id="seekObjContainer">
+        <progress id="seekObj" value="0" max="1"></progress>
+      </span>
+      <br>
+      <small style="float: left; position: relative; left: 15px;" class="start-time"></small>
+      <small style="float: right; position: relative; right: 20px;" class="end-time"></small>
+
+    </div>
+    <div class="album-image" style="background-image: url('https://artwork-cdn.7static.com/static/img/sleeveart/00/051/614/0005161476_350.jpg')"></div>
+  </div>
+      <script src="script.js"</script>
+
+</body>
+</html>

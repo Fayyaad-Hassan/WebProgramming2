@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Custom Video Player</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Call in video first -->
+<div id="video-container">
+<video id="video" width="854" height="480">
+  <source src="video.mp4" type="video/mp4">
+  <source src="video.webm" type="video/webm">
+  <source src="video.ogg" type="video/ogg">
+  </video>
+
+<!-- Video Controls go here. -->
+<!-- Buttons first -->
+<div id="video-controls">
+  <button type="button" id="play-pause" class="play">▶</button>
+
+  <button type="button" id="ff" class="fast_forward">⏩</button>
+
+  <button type="button" id= "fast" class= "x2">⯮</button>
+
+  <button type="button" id= "reverse" class= "reverse">⏪</button>
+
+  <!-- Next is the sliders and their accompanied buttons -->
+  <input type="range" id="video-bar" value="0">
+
+  <button type="button" id="mute">🔇</button>
+
+  <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+
+  <button type="button" id="full-screen">🖵</button>
+
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

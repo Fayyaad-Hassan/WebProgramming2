@@ -1,0 +1,49 @@
+body {
+  background-color: rgb(20,20,20);
+}
+
+#video-container {
+	width: 854px;
+	height: 480px;
+	position: relative;
+
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+	background: rgba(20,3,25,1);
+	border: 0;
+	color: #EEE; /* text color */
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	-o-border-radius: 12px;
+	border-radius: 12px;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+#video-bar {
+	width: 480px;
+}
+
+#volume-bar {
+	width: 120px;
+}
+
+#video-controls {
+	position: absolute;
+  bottom: 100;
+	left: 0;
+	right: 0;
+  padding: 10px;
+  opacity: 0;
+
+  background-image: -webkit-radial-gradient(circle, rgba(63,94,251,.5) 0%, rgba(252,70,107,.5) 100%);
+}
+
+  #video-container:hover #video-controls {
+  	opacity: .9;
+  }

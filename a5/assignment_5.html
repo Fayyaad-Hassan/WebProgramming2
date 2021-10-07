@@ -1,0 +1,100 @@
+
+<html>
+   <head>
+      <title>ajax_example</title>
+      <style>
+$bg-main-color: #fdfdfd;
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+    font-size: 1em;
+}
+
+body {
+  background: $bg-main-color;
+  line-height: 1.625;
+}
+
+h3, p, div {
+  text-align: center;
+}
+
+h3 {
+  text-transform: capitalize;
+  span {
+    text-transform: none;
+  }
+}
+
+button {
+  display: block;
+  margin: 15px auto;
+}
+
+#bio {
+  max-width: 70%;
+  margin: 15px auto;
+  padding: 10px;
+}
+
+      </style>
+
+
+
+   </head>
+
+   <body>
+   <h3>A Simple AJAX Example <span>with</span> Plain JavaScript</h3>
+<div>
+ <img src="lumumba.jpg" alt="Einstein">
+ <!-- <img src="Lumumba.jpg" alt="lumumba"> -->
+  <button id="request">Learn more about Lumumba</button>
+  <div id="bio"></div>
+</div>
+   </body>
+   <script language = "javascript" >
+      (function() {
+ 'use strict';
+ // find the desired selectors
+  var btn = document.getElementById('request');
+  var bio = document.getElementById('bio');
+  // set up a request
+  var request = new XMLHttpRequest();
+  // keep track of the request
+  request.onreadystatechange = function() {
+    // check if the response data send back to us
+    if(request.readyState === 4) {
+      // add a border
+      bio.style.border = '1px solid #e8e8e8';
+      // uncomment the line below to see the request
+      // console.log(request);
+      // check if the request is successful
+      if(request.status === 200) {
+        // update the HTML of the element
+        bio.innerHTML = request.responseText;
+      } else {
+        // otherwise display an error message
+        bio.innerHTML = 'An error occurred during your request: ' +  request.status + ' ' + request.statusText;
+      }
+    }
+  }
+ // specify the type of request
+ // register an event
+
+
+  btn.addEventListener('click', function() {
+    // hide the button
+    //this.style.display = 'none';
+    // send the request
+      request.open('Get', 'lumumba.txt');
+
+    request.send();
+  });
+  })();
+  </script>
+
+</html>

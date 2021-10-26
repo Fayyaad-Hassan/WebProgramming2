@@ -1,0 +1,23 @@
+body{
+  background-color: #000;
+}
+
+.fade{
+  animation: fade 5s;
+  text-align: center;
+  font-size: 5em;
+  font-family: "Courier New", monospace;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+@keyframes fade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+}

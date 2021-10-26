@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Rand-Tunes</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <h1 class='fade'>
+      <a href="midterm.html" style="color:white; text-decoration:none" onclick="randomSite();">Rand-Tunes</a><br>
+      <a href="musicchat.html" style="color:white; text-decoration:none" onclick="randomSite();">Music chatroom 1</a><br>
+      <a href="musicchat2.html" style="color:white; text-decoration:none" onclick="randomSite();">Music chatroom 2</a>
+    </h1>
+
+    <script type="text/javascript">
+    var links = ["youtube.com","pornhub.com","hanime.tv","twitter.com"];
+
+    randomSite = function() {
+      var randomIndex= Math.random() * links.length; <!--Generate random number from 0 to index end -->
+      randomIndex = parseInt(randomIndex, 10); //construct the link
+      var link = 'https://' + links[randomIndex];
+      window.open(link);
+    }
+    </script>
+
+  </body>
+</html>

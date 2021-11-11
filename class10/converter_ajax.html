@@ -1,0 +1,41 @@
+﻿<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Example Ajax PHP Form</title>
+        <style type="text/css">
+            #answer{
+                color: red;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <form id="my_form_id">
+            Number to convert into funny units: <input type="text" id="number" /><br>
+            <input type="submit" />
+        </form>
+        <div id="answer">
+        </div>
+
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#my_form_id').on('submit', function(e){
+                    //Stop the form from submitting itself to the server.
+                    e.preventDefault();
+                    var number = $('#number').val();
+                    $.ajax({
+                        type: "POST",
+                        url: 'converter_ajax.php',
+                        data: {number: number},
+                        success: function(data){
+                           // alert(data);
+                            $( "#answer" ).html(data);
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ajax Array Homework</title>
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+
+
+    </head>
+
+    <body>
+
+        <form id="my_form_id">
+            Movie Input: <input type="text" id="title" /><br>
+            <input type="submit" />
+        </form>
+        <div id="answer">
+        </div>
+
+        <div>
+        	(Look up "Black Dynamite", "Back to the future", "Joker", or "John Wick")
+        </div>
+
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#my_form_id').on('submit', function(e){
+                    //Stop the form from submitting itself to the server.
+                    e.preventDefault();
+                    var title = $('#title').val();
+                    $.ajax({
+                        type: "POST",
+                        url: 'php/array_html.php',
+                        data: {title: title},
+                        success: function(data){
+                           // alert(data);
+                            $( "#answer" ).html(data);
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
